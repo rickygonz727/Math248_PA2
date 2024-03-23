@@ -43,6 +43,9 @@ g(x) = np.arccos(np.exp(-(x**2)) - 1)
 which would give g(x) = x to find the root of the second function
 
 So a new function, func2_fp, needs to be defined in the functions.py file
+
+I tested the functions in maxima and option two is the one that works with the conditions for a fixed point algorithm
+So, g(x) = np.arccos(np.exp(-(x**2)) - 1)
 """
 
 func2_fp_lists = fn.fixed_point_func1(fn.func2, 1, 35)
