@@ -63,3 +63,31 @@ def lex_func(a, b, c):
         
     """
     return a * b * c
+
+
+def logistic_func(func,a,x1,n):
+    """Function to create lists of x-iterates and the number of steps.
+    
+    Inputs:
+        func (function): The function that we are stepping through. 
+        a (float): A value within the logistic function that can change
+        x1 (float): The initial condition of the logisitc function
+        n (int): The step size for iteration.
+        
+    Returns:
+        calculations (list): A list of two lists, which consists of the list of x-values and a list of steps. 
+    
+    """
+    x = np.zeros(n+1) #Creates zero list for x-values
+    steps = np.zeros(n+1) #Creates zero list for steps
+    
+    x[1] = x1 #Appends the initial condition to the x-list
+    steps[1] = 1 #Appends the first step to the steps list
+    
+    for k in range(1,n): #Begins loop to construct each of the lists
+        x[k+1] = func(x[k]) #Replaces a value in the x-values list with what is calculated from the logistic function
+        steps[k+1] = k+1 #Replaces a value in the steps list from the iterate in the for-loop
+    
+    calculations = [x,steps] #Creates a list of both the x-values and the steps
+    return calculations #Returns the matrix
+
