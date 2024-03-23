@@ -32,6 +32,18 @@ func3_nm_steps = nm3[1]
 
 
 #%% Fixed Point method for the second function
+"""
+This part of the code needs to be reconsidered, forgot that there should be the g(x) = x part in order to do this stepping process
+Since this is function 2, that means theres two options for what we can do
+
+Either g(x) = np.sqrt(-np.log(np.cos(x) + 1))
+or
+g(x) = np.arccos(np.exp(-(x**2)) - 1)
+
+which would give g(x) = x to find the root of the second function
+
+So a new function, func2_fp, needs to be defined in the functions.py file
+"""
 
 func2_fp_lists = fn.fixed_point_func1(fn.func2, 1, 35)
 

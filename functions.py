@@ -155,4 +155,7 @@ def newtons_method(func, dfunc, xn, limit):
         
     list_calcs = [x.tolist(),steps.tolist()]
     return list_calcs
-    
+
+
+def bisection_method():
+    return
