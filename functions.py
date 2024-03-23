@@ -104,7 +104,7 @@ def lex_func(a, b, c):
     return a * b * c
 
 
-def fixed_point_func(func,x1,n):
+def fixed_point_func1(func,x1,n):
     """Function to create lists of x-iterates and the number of steps.
     
     Inputs:
@@ -126,7 +126,7 @@ def fixed_point_func(func,x1,n):
         x[k+1] = func(x[k]) #Replaces a value in the x-values list with what is calculated from the function
         steps[k+1] = k+1 #Replaces a value in the steps list from the iterate in the for-loop
     
-    calculations = [x,steps] #Creates a list of both the x-values and the steps
+    calculations = [x.tolist(),steps.tolist()] #Creates a list of both the x-values and the steps
     return calculations #Returns the list
 
 
