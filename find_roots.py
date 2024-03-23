@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 #%%Newtons Method for the three functions
 
-nm1 = fn.newtons_method(fn.func1, fn.dfunc2, 1, 5)
+nm1 = fn.newtons_method(fn.func1, fn.dfunc1, 1, 5)
 nm2 = fn.newtons_method(fn.func2, fn.dfunc2, 3, 5)
 nm3 = fn.newtons_method(fn.func3, fn.dfunc3, 4, 5)
 
