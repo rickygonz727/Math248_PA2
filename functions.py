@@ -23,6 +23,19 @@ def func1(x):
     return np.exp(2*x -1) - 2*(x**2) - (1/2)
 
 
+def dfunc1(x):
+    """This function defines the derivative of the first component of Lex Luthors Devious Function
+    
+    Inputs:
+        x (float): An arbitrary value
+        
+    Returns:
+        (4*x*(np.exp(2*x-1)) - 4*x - (2*(np.exp(2*x-1)))) (float): The derivative function
+    
+    """
+    return (4*x*(np.exp(2*x-1)) - 4*x - (2*(np.exp(2*x-1))))
+
+
 def func2(x):
     """This function defines the second component of Lex Luthors Devious Function.
     
@@ -36,6 +49,19 @@ def func2(x):
     return np.cos(x) - np.exp(-(x**2)) + 1
 
 
+def dfunc2(x):
+    """This function defines the derivative of the second component of Lex Luthors Devious Function.
+    
+    Inputs:
+        x (float): An arbitraty value
+        
+    Returns:
+        (2*(x**3)*np.exp(-(x**2))) - np.sin(x) (float): The derivative function
+        
+    """
+    return (2*(x**3)*np.exp(-(x**2))) - np.sin(x)
+
+
 def func3(x):
     """This function defines the third component of Lex Luthors Devious Function.
     
@@ -47,6 +73,19 @@ def func3(x):
         
     """
     return (x**5) - 9*(x**4) - (x**3) + 17*(x**2) - 8*x - 8
+
+
+def dfunc3(x):
+    """This function defines the derivative of the third component of Lex Luthors Devious function.
+    
+    Inpurs:
+        x (flaot): An arbitrary value
+        
+    Returns:
+        5*(x**4) - 36*(x**3) - 3*(x**2) + 34*x - 8 (float): The derivative function
+    
+    """
+    return 5*(x**4) - 36*(x**3) - 3*(x**2) + 34*x - 8
 
 
 def lex_func(a, b, c):
@@ -91,3 +130,30 @@ def logistic_func(func,a,x1,n):
     calculations = [x,steps] #Creates a list of both the x-values and the steps
     return calculations #Returns the matrix
 
+
+def newtons_method(func, dfunc, xn, limit):
+    """This function defines Newtons Method for converging to the root of a function.
+    
+    Inputs:
+        func (function): The function that we are stepping through
+        dfunc (function): The functions derivative
+        xn (float): Initial x-value
+        limit (int): Tolerance number for when Newtons method should stop
+        
+    Returns:
+        x (list): A list of the x-values calculated from stepping through the function.
+        
+    """
+    x = np.zeros(limit+1)
+    steps = np.zeros(limit+1)
+    
+    x[1] = xn
+    steps[1] = 1
+    
+    for i in range(1,limit):
+        x[i+1] = x[1] - (func(xn) / dfunc(xn))
+        steps[i+1] = i+1
+        
+    list_calcs = [x.tolist(),steps.tolist()]
+    return list_calcs
+    
