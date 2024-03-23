@@ -6,8 +6,6 @@ Version: March 20th, 2024
 Approximating Roots to Defeat Lex Luthor
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
 import functions as fn
 
 #Newtons Method for the three functions
