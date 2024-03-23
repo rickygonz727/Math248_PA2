@@ -24,29 +24,3 @@ func1_nm_steps = func1_nm_lists[1]
 func2_nm_steps = func2_nm_lists[1]
 func3_nm_steps = func3_nm_lists[1]
 
-plt.figure(1)
-plt.scatter(func1_nm_x, func1_nm_steps, label='Steps')
-plt.xlabel("X-Axis")
-plt.ylabel("Steps")
-plt.title("Newtons Method for the First Component")
-plt.legend()
-plt.grid()
-plt.show()
-
-plt.figure(2)
-plt.scatter(func2_nm_x, func2_nm_steps, label='Steps')
-plt.xlabel("X-Axis")
-plt.ylabel("Steps")
-plt.title("Newtons Method for the Second Component")
-plt.legend()
-plt.grid()
-plt.show()
-
-plt.figure(3)
-plt.scatter(func3_nm_x, func3_nm_steps, label='Steps')
-plt.xlabel("X-Axis")
-plt.ylabel("Steps")
-plt.title("Newtons Method for the Third Component")
-plt.legend()
-plt.grid()
-plt.show()
