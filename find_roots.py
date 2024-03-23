@@ -10,11 +10,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import functions as fn
 
-#Newtons Method for All three functions
+#Newtons Method for the three functions
 
 func1_nm_lists = fn.newtons_method(fn.func1, fn.dfunc2, 1, 5)
-func2_nm_lists = fn.newtons_method(fn.func2, fn.dfunc2, 1, 5)
-func3_nm_lists = fn.newtons_method(fn.func3, fn.dfunc3, 1, 5)
+func2_nm_lists = fn.newtons_method(fn.func2, fn.dfunc2, 3, 5)
+func3_nm_lists = fn.newtons_method(fn.func3, fn.dfunc3, 4, 5)
 
 func1_nm_x = func1_nm_lists[0]
 func2_nm_x = func2_nm_lists[0]
