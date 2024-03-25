@@ -28,10 +28,10 @@ def lex_nm():
     
     #These next 6 lines of code calculate all 6 roots of the second function that lies between -10 and 10
     #Desmos was used to help pick the initial x-values
-    nm2_1 = fn.newtons_method(fn.func2, fn.dfunc2, 3.13, 7) 
-    nm2_2 = fn.newtons_method(fn.func2, fn.dfunc2, -3.13, 7)
-    nm2_3 = fn.newtons_method(fn.func2, fn.dfunc2, 3.151, 7) 
-    nm2_4 = fn.newtons_method(fn.func2, fn.dfunc2, -3.151, 7)
+    nm2_1 = fn.newtons_method(fn.func2, fn.dfunc2, 3.1, 15) 
+    nm2_2 = fn.newtons_method(fn.func2, fn.dfunc2, -3.1, 15)
+    nm2_3 = fn.newtons_method(fn.func2, fn.dfunc2, 3.2, 15) 
+    nm2_4 = fn.newtons_method(fn.func2, fn.dfunc2, -3.2, 15)
     nm2_5 = fn.newtons_method(fn.func2, fn.dfunc2, 9.4, 25)
     nm2_6 = fn.newtons_method(fn.func2, fn.dfunc2, -9.4, 25)
     
