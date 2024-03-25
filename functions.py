@@ -36,6 +36,19 @@ def dfunc1(x):
     return (4*x*(np.exp(2*x-1)) - 4*x - (2*(np.exp(2*x-1))))
 
 
+def gfunc1(x):
+    """This function defines the g(x) function for finding the fixed point of g(x) = x
+    
+    Inputs:
+        x (float): An arbitrary value
+        
+    Returns:
+        
+        
+    """
+    return (1/2)*(np.log(2*(x**2)) + 1)
+
+
 def func2(x):
     """This function defines the second component of Lex Luthors Devious Function.
     
@@ -60,6 +73,105 @@ def dfunc2(x):
         
     """
     return (2*x*np.exp(-(x**2))) - np.sin(x)
+
+
+def gfunc2_1(x):
+    """This function defines one of the g(x) functions for finding the fixed point of func2. 
+        Note: This function works for all x in [-10,10].
+        
+    Inputs:
+        x (flaot): An arbitrary value.
+        
+    Returns:
+        np.arccos(np.exp(-(x**2))-1) (float): One of seven functions for g(x)
+    
+    """
+    return np.arccos(np.exp(-(x**2))-1)
+
+
+def gfunc2_2(x):
+    """This function defines one of the g(x) functions for finding the fixed point of func2. 
+        Note: This function works for all x in [-10,10].
+        
+    Inputs:
+        x (flaot): An arbitrary value.
+        
+    Returns:
+        np.arcsin(np.sqrt(1-((np.exp(-(x**2))-1)**2))) (float): One of seven functions for g(x)
+        
+    """
+    return np.arcsin(np.sqrt(1-((np.exp(-(x**2))-1)**2)))
+
+
+def gfunc2_3(x):
+    """This function defines one of the g(x) functions for finding the fixed point of func2. 
+        Note: This function works for all x in [-10,0) U (0,10].
+                                                          
+    Inputs:
+        x (flaot): An arbitrary value.
+        
+    Returns:
+        -(1/x)*np.log((np.sqrt(1-(np.sin(x)**2)))) (float): One of seven functions for g(x)
+
+    """
+    return -(1/x)*np.log((np.sqrt(1-(np.sin(x)**2))))
+
+
+def gfunc2_4(x):
+    """This function defines one of the g(x) functions for finding the fixed point of func2. 
+        Note: This function works for all x in [-10, -5pi/2) U (-3pi/2, -pi/2) U (pi/2, 3pi/2) U (5pi/2, 10].
+                                                          
+    Inputs: 
+        x (float): An Arbitrary value
+        
+    Returns:
+        np.sqrt(-np.log(np.cos(x)+1)) (float): One of seven functions for g(x)
+        
+    """
+    return np.sqrt(-np.log(np.cos(x)+1))
+
+
+def gfunc2_5(x):
+    """This function defines one of the g(x) functions for finding the fixed point of func2. 
+        Warning: This function only works for extremely specific values of x.
+        Interval: x in (-9.5,-8.5) U (-6.8, -5.7) U (-3.6, -2.6) U (-0.9, 0.9) U (2.6, 3.6) U (5.7, 6.8) U (8.5, 9.5)
+                                                          
+    Inputs: 
+        x (float): An Arbitrary value
+        
+    Returns:
+        (1/2)*np.arcsin(2*np.sin(2*x)*(np.exp(-(x**2))-1)) (float): One of seven functions for g(x)
+        
+    """
+    return (1/2)*np.arcsin(2*np.sin(2*x)*(np.exp(-(x**2))-1))
+
+
+def gfunc2_6(x):
+    """This function defines one of the g(x) functions for finding the fixed point of func2. 
+        Note: This function works for all x in [-10, -0.8) U (0.8, 10].
+                                                          
+    Inputs: 
+        x (float): An Arbitrary value
+        
+    Returns:
+        np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))-1)))) (float): One of seven functions for g(x)
+        
+    """
+    return np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))-1))))
+
+
+def gfunc2_7(x):
+    """This function defines one of the g(x) functions for finding the fixed point of func2. 
+        Note: This function works for all x in [-10, -3.14) U (-3.14, 0) U (0, 3.14) U (3.14, 10].
+                                                          
+    Inputs: 
+        x (float): An Arbitrary value
+        
+    Returns:
+        -(1/x)*(np.log(np.cos(x)+1)) (float): One of seven functions for g(x)
+        
+    """
+    return -(1/x)*(np.log(np.cos(x)+1))
 
 
 def func3(x):
