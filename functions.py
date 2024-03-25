@@ -150,7 +150,7 @@ def newtons_method(func, dfunc, xn, limit):
     steps[1] = 1
     
     for i in range(1,limit):
-        x[i+1] = x[1] - (func(xn) / dfunc(xn))
+        x[i+1] = x[i] - (func(x[i]) / dfunc(x[i]))
         steps[i+1] = i+1
         
     list_calcs = [x.tolist(),steps.tolist()]
