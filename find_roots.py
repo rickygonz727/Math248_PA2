@@ -75,6 +75,7 @@ def lex_nm():
     func_nm_x10 = func3_nm_x3[-1]
     roots.append(func_nm_x10)
     
+    roots.sort()
     #After all of the values are appended, we then print to the user all 10 roots as well as the degree of accuracy, which
     #thanks to Newtons Method, is extremely high
     print(f"\nThe roots of Lex Luthors Function are: \n\n{func_nm_x1}\n{func_nm_x2}\n{func_nm_x3}")
