@@ -59,7 +59,7 @@ def dfunc2(x):
         (2*(x**3)*np.exp(-(x**2))) - np.sin(x) (float): The derivative function
         
     """
-    return (2*(x**3)*np.exp(-(x**2))) - np.sin(x)
+    return (2*x*np.exp(-(x**2))) - np.sin(x)
 
 
 def func3(x):
