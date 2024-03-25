@@ -19,7 +19,7 @@ def lex_nm():
         None
     
     Returns:
-        roots (list): A list of all 10 roots to Lex Luthors Devious Function
+        roots (list): A sorted list of all 10 roots from smallest to largest to Lex Luthors Devious Function
         
     """
     roots = [] #This creates an empty list to store the roots
