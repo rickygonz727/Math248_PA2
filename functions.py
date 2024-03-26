@@ -84,7 +84,7 @@ def gfunc2_1(x):
         x (flaot): An arbitrary value.
         
     Returns:
-        np.arccos(np.exp(-(x**2))-1) (float): One of eight functions for g(x)
+        np.arccos(np.exp(-(x**2))-1) (float): One of the functions for g(x)
     
     """
     return np.arccos(np.exp(-(x**2))-1)
@@ -98,7 +98,7 @@ def gfunc2_2(x):
         x (flaot): An arbitrary value.
         
     Returns:
-        np.arcsin(np.sqrt(1-((np.exp(-(x**2))-1)**2))) (float): One of eight functions for g(x)
+        np.arcsin(np.sqrt(1-((np.exp(-(x**2))-1)**2))) (float): One of the functions for g(x)
         
     """
     return np.arcsin(np.sqrt(1-((np.exp(-(x**2))-1)**2)))
@@ -112,7 +112,7 @@ def gfunc2_3(x):
         x (float): An Arbitrary value
         
     Returns:
-        np.sqrt(-np.log(np.cos(x)+1)) (float): One of eight functions for g(x)
+        np.sqrt(-np.log(np.cos(x)+1)) (float): One of the functions for g(x)
         
     """
     return np.sqrt(-np.log(np.cos(x)+1))
@@ -127,10 +127,10 @@ def gfunc2_4(x):
         x (float): An Arbitrary value
         
     Returns:
-        (1/2)*np.arcsin(2*np.sin(2*x)*(np.exp(-(x**2))-1)) (float): One of eight functions for g(x)
+        (1/2)*np.arcsin(2*np.sin(2*x)*(np.exp(-(x**2))-1)) (float): One of the functions for g(x)
         
     """
-    return (1/2)*np.arcsin(2*np.sin(2*x)*(np.exp(-(x**2))-1))
+    return (1/2)*(np.arcsin(2*np.sin(x)*(np.exp(-(x**2))-1)))
 
 
 def gfunc2_5(x):
@@ -141,7 +141,7 @@ def gfunc2_5(x):
         x (float): An Arbitrary value
         
     Returns:
-        np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))-1)))) (float): One of eight functions for g(x)
+        np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))-1)))) (float): One of the functions for g(x)
         
     """
     return np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))-1))))
@@ -155,10 +155,24 @@ def gfunc2_6(x):
         x (float): An Arbitrary value
         
     Returns:
-        -(1/x)*(np.log(np.cos(x)+1)) (float): One of eight functions for g(x)
+        -(1/x)*(np.log(np.cos(x)+1)) (float): One of the functions for g(x)
         
     """
     return -(1/x)*(np.log(np.cos(x)+1))
+
+
+def gfunc2_7(x):
+    """This function defines one of the g(x) functions for finding the fixed points of func2.
+        Interval:
+            
+    Inputs:
+        x (float): An Arbitrary value
+        
+    Returns:
+        -(1/x)*(np.log(((np.sin(2/x)/(2*np.sin(x)))+1))) (float): One of the functions for g(x)
+        
+    """
+    return -(1/x)*(np.log(((np.sin(2/x)/(2*np.sin(x)))+1)))
 
 
 def func3(x):
@@ -195,7 +209,7 @@ def gfunc3_1(x):
         x (float): An arbitrary value
         
     Returns:
-        ((x**5)-9*(x**4)+17*(x**2)-8*x-8)**(1/3) (float): One of the four g(x)'s
+        ((x**5)-9*(x**4)+17*(x**2)-8*x-8)**(1/3) (float): One of the g(x)'s
         
     """
     return ((x**5)-9*(x**4)+17*(x**2)-8*x-8)**(1/3)
@@ -209,7 +223,7 @@ def gfunc3_2(x):
         x (float): An arbitrary value
         
     Returns:
-        9*(x**4)+(x**3)-17*(x**2)+8*(x) +8)**(1/5) (float): One of the four g(x)'s
+        9*(x**4)+(x**3)-17*(x**2)+8*(x) +8)**(1/5) (float): One of the g(x)'s
         
     """
     return (9*(x**4)+(x**3)-17*(x**2)+8*(x) +8)**(1/5)
@@ -223,26 +237,10 @@ def gfunc3_3(x):
         x (float): An arbitrary value
         
     Returns:
-        ((1/9)*((x**5)-(x**3)+17*(x**2)-8*x-8))**(1/4) (float): One of the four g(x)'s
+        ((1/9)*((x**5)-(x**3)+17*(x**2)-8*x-8))**(1/4) (float): One of the g(x)'s
         
     """
     return ((1/9)*((x**5)-(x**3)+17*(x**2)-8*x-8))**(1/4)
-
-
-def lex_func(a, b, c):
-    """This function defines the combination of all of the three functions
-    
-    Inputs:
-        a (float): An arbitrary value
-        b (float): An arbitrary value
-        c (float): An arbitrary value
-
-        
-    Returns:
-        a * b * c (float): The combined computation
-        
-    """
-    return a * b * c
 
 
 def fixed_point_func(func,x1,n):
@@ -271,32 +269,60 @@ def fixed_point_func(func,x1,n):
     return calculations #Returns the list
 
 
-def newtons_method(func, dfunc, xn, limit):
+def plot_fixed_point(x,steps,num):
+    """This function plots fixed point methods.
+    
+    Input:
+        x (list): The list of x-values calcualted from the method
+        steps (list): The list of steps taken during the method
+        num (int): The number of the respective root we're plotting
+        
+    Returns:
+        None
+        
+    """
+    import matplotlib.pyplot as plt
+    
+    title = "Fixed Point Function Plot for root #" + str(num)
+    plt.figure(figsize=(7,5))
+    plt.scatter(steps, x)
+    plt.title(title)
+    plt.xlabel("x-Axis")
+    plt.ylabel("Iterations")
+    plt.grid()
+    plt.show()
+    
+    
+def newtons_method(func,dfunc, x0, tol=10E-14):
     """This function defines Newtons Method for converging to the root of a function.
     
     Inputs:
         func (function): The function that we are stepping through
         dfunc (function): The functions derivative
-        xn (float): Initial x-value
-        limit (int): Tolerance number for when Newtons method should stop
+        x0 (float): Initial x-value
+        tol (int): Tolerance number for how accurate we want Newtons Method to be (14 decimal places).
         
     Returns:
-        x (list): A list of the x-values calculated from stepping through the function.
+        list_calcs (list): A list of the x-values, error, and final k value of the iterations. 
         
     """
-    x = np.zeros(limit+1)
-    steps = np.zeros(limit+1)
+    limit = 1000
+    x = np.zeros(limit + 1)
+    error = np.zeros(limit + 1)
     
-    x[1] = xn
-    steps[1] = 1
+    error[1] = 10
+    x[1] = x0
+    k = 1
     
-    for i in range(1,limit):
-        x[i+1] = x[i] - (func(x[i]) / dfunc(x[i]))
-        steps[i+1] = i+1
+    while error[k] > tol and k < limit:
+        x[k+1] = x[k] - (func(x[k]) / dfunc(x[k]))
         
-    list_calcs = [x.tolist(),steps.tolist()]
+        k += 1
+        error[k] = abs(x[k] - x[k-1])
+    
+    list_calcs = [x, error, k]
     return list_calcs
-
+    
 
 def bisection_method():
     return
