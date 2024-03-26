@@ -43,10 +43,10 @@ def gfunc1(x):
         x (float): An arbitrary value
         
     Returns:
-        
+        (1/2)*(np.log(2*(x**2)) + 1) (float): The g(x) function for func1
         
     """
-    return (1/2)*(np.log(2*(x**2)) + 1)
+    return (1/2)*(np.log(2*(x**2)+(1/2)) + 1)
 
 
 def func2(x):
@@ -78,12 +78,13 @@ def dfunc2(x):
 def gfunc2_1(x):
     """This function defines one of the g(x) functions for finding the fixed point of func2. 
         Note: This function works for all x in [-10,10].
+        Use this function for the 3.13 root.
         
     Inputs:
         x (flaot): An arbitrary value.
         
     Returns:
-        np.arccos(np.exp(-(x**2))-1) (float): One of seven functions for g(x)
+        np.arccos(np.exp(-(x**2))-1) (float): One of eight functions for g(x)
     
     """
     return np.arccos(np.exp(-(x**2))-1)
@@ -92,12 +93,13 @@ def gfunc2_1(x):
 def gfunc2_2(x):
     """This function defines one of the g(x) functions for finding the fixed point of func2. 
         Note: This function works for all x in [-10,10].
+        Use this function for the -3.13 root.
         
     Inputs:
         x (flaot): An arbitrary value.
         
     Returns:
-        np.arcsin(np.sqrt(1-((np.exp(-(x**2))-1)**2))) (float): One of seven functions for g(x)
+        np.arcsin(np.sqrt(1-((np.exp(-(x**2))-1)**2))) (float): One of eight functions for g(x)
         
     """
     return np.arcsin(np.sqrt(1-((np.exp(-(x**2))-1)**2)))
@@ -106,12 +108,13 @@ def gfunc2_2(x):
 def gfunc2_3(x):
     """This function defines one of the g(x) functions for finding the fixed point of func2. 
         Note: This function works for all x in [-10,0) U (0,10].
+        Use this function for the 3pi root
                                                           
     Inputs:
         x (flaot): An arbitrary value.
         
     Returns:
-        -(1/x)*np.log((np.sqrt(1-(np.sin(x)**2)))) (float): One of seven functions for g(x)
+        -(1/x)*np.log((np.sqrt(1-(np.sin(x)**2)))) (float): One of eight functions for g(x)
 
     """
     return -(1/x)*np.log((np.sqrt(1-(np.sin(x)**2))))
@@ -120,12 +123,13 @@ def gfunc2_3(x):
 def gfunc2_4(x):
     """This function defines one of the g(x) functions for finding the fixed point of func2. 
         Note: This function works for all x in [-10, -5pi/2) U (-3pi/2, -pi/2) U (pi/2, 3pi/2) U (5pi/2, 10].
+        Use this for the 3.15 root. 
                                                           
     Inputs: 
         x (float): An Arbitrary value
         
     Returns:
-        np.sqrt(-np.log(np.cos(x)+1)) (float): One of seven functions for g(x)
+        np.sqrt(-np.log(np.cos(x)+1)) (float): One of eight functions for g(x)
         
     """
     return np.sqrt(-np.log(np.cos(x)+1))
@@ -135,12 +139,13 @@ def gfunc2_5(x):
     """This function defines one of the g(x) functions for finding the fixed point of func2. 
         Warning: This function only works for extremely specific values of x.
         Interval: x in (-9.5,-8.5) U (-6.8, -5.7) U (-3.6, -2.6) U (-0.9, 0.9) U (2.6, 3.6) U (5.7, 6.8) U (8.5, 9.5)
+        This function will not be used after careful consideration. 
                                                           
     Inputs: 
         x (float): An Arbitrary value
         
     Returns:
-        (1/2)*np.arcsin(2*np.sin(2*x)*(np.exp(-(x**2))-1)) (float): One of seven functions for g(x)
+        (1/2)*np.arcsin(2*np.sin(2*x)*(np.exp(-(x**2))-1)) (float): One of eight functions for g(x)
         
     """
     return (1/2)*np.arcsin(2*np.sin(2*x)*(np.exp(-(x**2))-1))
@@ -149,12 +154,13 @@ def gfunc2_5(x):
 def gfunc2_6(x):
     """This function defines one of the g(x) functions for finding the fixed point of func2. 
         Note: This function works for all x in [-10, -0.8) U (0.8, 10].
+        Use this function for the -3.15 root
                                                           
     Inputs: 
         x (float): An Arbitrary value
         
     Returns:
-        np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))-1)))) (float): One of seven functions for g(x)
+        np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))-1)))) (float): One of eight functions for g(x)
         
     """
     return np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))-1))))
@@ -163,15 +169,31 @@ def gfunc2_6(x):
 def gfunc2_7(x):
     """This function defines one of the g(x) functions for finding the fixed point of func2. 
         Note: This function works for all x in [-10, -3.14) U (-3.14, 0) U (0, 3.14) U (3.14, 10].
+        This function will not be used after careful consideration.
+        
+    Inputs: 
+        x (float): An Arbitrary value
+        
+    Returns:
+        -(1/x)*(np.log(np.cos(x)+1)) (float): One of eight functions for g(x)
+        
+    """
+    return -(1/x)*(np.log(np.cos(x)+1))
+
+
+def gfunc2_8(x):
+    """This function defines one of the g(x) functions for finding the fixed point of func2. 
+        Note: This function works for all x in [-10, -6) U (6, 10].
+        Use this function for the -3pi root
                                                           
     Inputs: 
         x (float): An Arbitrary value
         
     Returns:
-        -(1/x)*(np.log(np.cos(x)+1)) (float): One of seven functions for g(x)
+        np.arccos(np.exp(-(x**2))+1) (float): One of eight functions for g(x)
         
     """
-    return -(1/x)*(np.log(np.cos(x)+1))
+    return np.arccos(np.exp(-(x**2))+1)
 
 
 def func3(x):
@@ -200,6 +222,66 @@ def dfunc3(x):
     return 5*(x**4) - 36*(x**3) - 3*(x**2) + 34*x - 8
 
 
+def gfunc3_1(x):
+    """This function defines one of the possible g(x)'s for the third component to Lex's devious function.
+        Interval: x between [-1.7, 1.6]
+        Use this function to approximate the -0.510 root
+        
+    Inputs:
+        x (float): An arbitrary value
+        
+    Returns:
+        (1/8)*((x**5)-9*(x**4)-(x**3)+17*(x**2)-8) (float): One of the four g(x)'s
+        
+    """
+    return (1/8)*((x**5)-9*(x**4)-(x**3)+17*(x**2)-8)
+
+
+def gfunc3_2(x):
+    """This function defines one of the possible g(x)'s for the third component to Lex's devious function.
+        Interval: x between [-3, 8.5]
+        Use this function to approximate the -1.38 root
+        
+    Inputs:
+        x (float): An arbitrary value
+        
+    Returns:
+        ((x**5)-9*(x**4)+17*(x**2)-8*x-8)**(1/3) (float): One of the four g(x)'s
+        
+    """
+    return ((x**5)-9*(x**4)+17*(x**2)-8*x-8)**(1/3)
+
+
+def gfunc3_3(x):
+    """This function defines one of the possible g(x)'s for the third component to Lex's devious function.
+        Interval: x between [-10, 10]
+        Use this function to approximate the 8.91 root
+        
+    Inputs:
+        x (float): An arbitrary value
+        
+    Returns:
+        9*(x**4)+(x**3)-17*(x**2)+8*(x) +8)**(1/5) (float): One of the four g(x)'s
+        
+    """
+    return (9*(x**4)+(x**3)-17*(x**2)+8*(x) +8)**(1/5)
+
+
+def gfunc3_4(x):
+    """This function defines one of the possible g(x)'s for the third component to Lex's devious function.
+        Interval: x between (-2.79, -0.486] U [0.963, 9.778]
+        This function will not be used after careful consideration. 
+        
+    Inputs:
+        x (float): An arbitrary value
+        
+    Returns:
+        ((1/9)*((x**5)-(x**3)+17*(x**2)-8*x-8))**(1/4) (float): One of the four g(x)'s
+        
+    """
+    return ((1/9)*((x**5)-(x**3)+17*(x**2)-8*x-8))**(1/4)
+
+
 def lex_func(a, b, c):
     """This function defines the combination of all of the three functions
     
@@ -216,7 +298,7 @@ def lex_func(a, b, c):
     return a * b * c
 
 
-def fixed_point_func1(func,x1,n):
+def fixed_point_func(func,x1,n):
     """Function to create lists of x-iterates and the number of steps.
     
     Inputs:

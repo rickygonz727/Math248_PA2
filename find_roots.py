@@ -28,8 +28,8 @@ def lex_nm():
     
     #These next 6 lines of code calculate all 6 roots of the second function that lies between -10 and 10
     #Desmos was used to help pick the initial x-values
-    nm2_1 = fn.newtons_method(fn.func2, fn.dfunc2, 3.1, 15) 
-    nm2_2 = fn.newtons_method(fn.func2, fn.dfunc2, -3.1, 15)
+    nm2_1 = fn.newtons_method(fn.func2, fn.dfunc2, 3, 15) 
+    nm2_2 = fn.newtons_method(fn.func2, fn.dfunc2, -3, 15)
     nm2_3 = fn.newtons_method(fn.func2, fn.dfunc2, 3.2, 15) 
     nm2_4 = fn.newtons_method(fn.func2, fn.dfunc2, -3.2, 15)
     nm2_5 = fn.newtons_method(fn.func2, fn.dfunc2, 9.4, 25)
@@ -88,45 +88,37 @@ def lex_nm():
 
 #%% Fixed point method for the First function
 
+func1_fpm = fn.fixed_point_func(fn.gfunc1, -0.5, 7)
 
-
+func1_fp_x = func1_fpm[0]
 
 
 #%% Fixed Point method for the second function
-"""
-This part of the code needs to be reconsidered, forgot that there should be the g(x) = x part in order to do this stepping process
-Since this is function 2, that means theres two options for what we can do
 
-Either g(x) = np.sqrt(-np.log(np.cos(x) + 1))
-or
-g(x) = np.arccos(np.exp(-(x**2)) - 1)
+func2_fpm_1 = fn.fixed_point_func(fn.gfunc2_1, 3, 50)
+func2_fpm_2 = fn.fixed_point_func(fn.gfunc2_2, -3, 50) #Fix
+func2_fpm_3 = fn.fixed_point_func(fn.gfunc2_3, 9.4, 50) #Fix
+func2_fpm_4 = fn.fixed_point_func(fn.gfunc2_4, 3.2, 50) #Find a different function for +3.15
+func2_fpm_5 = fn.fixed_point_func(fn.gfunc2_6, -3.2, 50) #Reconsider
+func2_fpm_6 = fn.fixed_point_func(fn.gfunc2_8, -9.4, 50) #Reconsider
 
-which would give g(x) = x to find the root of the second function
+func2_fp_x1 = func2_fpm_1[0]
+func2_fp_x2 = func2_fpm_2[0]
+func2_fp_x3 = func2_fpm_3[0]
+func2_fp_x4 = func2_fpm_4[0]
+func2_fp_x5 = func2_fpm_5[0]
+func2_fp_x6 = func2_fpm_6[0]
 
-So a new function, func2_fp, needs to be defined in the functions.py file
 
-I tested the functions in maxima and option two is the one that works with the conditions for a fixed point algorithm
-So, g(x) = np.arccos(np.exp(-(x**2)) - 1)
-
-
-func2_fp_lists = fn.fixed_point_func1(fn.func2, 1, 35)
-
-func2_fp_x = func2_fp_lists[0]
-func2_fp_steps = func2_fp_lists[1]
-
-plt.figure(2)
-plt.figure(figsize=(7,5))
-plt.scatter(func2_fp_steps, func2_fp_x, label='Iterates')
-plt.title("Stepping through Function 2")
-plt.xlabel("X-Axis")
-plt.ylabel("Steps")
-plt.legend()
-plt.grid()
-plt.show()
-"""
 #%% Fixed Point Method for the third function
 
+func3_fpm_1 = fn.fixed_point_func(fn.gfunc3_1, -0.5, 50) #Fix
+func3_fpm_2 = fn.fixed_point_func(fn.gfunc3_2, -1.38, 50) #Reconsider
+func3_fpm_3 = fn.fixed_point_func(fn.gfunc3_3, 8.5, 50) 
 
+func3_fp_x1 = func3_fpm_1[0]
+func3_fp_x2 = func3_fpm_1[0]
+func3_fp_x3 = func3_fpm_3[0]
 
 
 #%% Bisection Method for all three functions
