@@ -94,6 +94,10 @@ func1_fp_x = func1_fpm[0]
 
 
 #%% Fixed Point method for the second function
+"""
+Reevaluating these fixed point algorithms.
+The only ones that may work are: 1,2,4,5,6,7
+Delete 3 and 8
 
 func2_fpm_1 = fn.fixed_point_func(fn.gfunc2_1, 3, 50)
 func2_fpm_2 = fn.fixed_point_func(fn.gfunc2_2, -3, 50) #Fix
@@ -108,9 +112,12 @@ func2_fp_x3 = func2_fpm_3[0]
 func2_fp_x4 = func2_fpm_4[0]
 func2_fp_x5 = func2_fpm_5[0]
 func2_fp_x6 = func2_fpm_6[0]
-
+"""
 
 #%% Fixed Point Method for the third function
+"""
+So far only the third linen of code works (with the right function call)
+Have been testing the fixed point algorithm requirements for these functions.
 
 func3_fpm_1 = fn.fixed_point_func(fn.gfunc3_1, -0.5, 50) #Fix
 func3_fpm_2 = fn.fixed_point_func(fn.gfunc3_2, -1.38, 50) #Reconsider
@@ -119,7 +126,7 @@ func3_fpm_3 = fn.fixed_point_func(fn.gfunc3_3, 8.5, 50)
 func3_fp_x1 = func3_fpm_1[0]
 func3_fp_x2 = func3_fpm_1[0]
 func3_fp_x3 = func3_fpm_3[0]
-
+"""
 
 #%% Bisection Method for all three functions
 
