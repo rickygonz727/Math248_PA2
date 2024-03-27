@@ -77,102 +77,91 @@ def dfunc2(x):
 
 
 def gfunc2_1(x):
-    """This function defines one of the g(x) functions for finding the fixed point of func2. 
-        Note: This function works for all x in [-10,10].
+    """This function defines a g(x) function that works for iterating through function #2.
+        This can only work for the roots more near the origin.
         
     Inputs:
-        x (flaot): An arbitrary value.
+        x (float): An arbitrary value
         
     Returns:
-        np.arccos(np.exp(-(x**2))-1) (float): One of the functions for g(x)
-    
+        np.arccos(np.exp(-(x**2))-1) (float): One of 6 g(x) functions.
+        
     """
     return np.arccos(np.exp(-(x**2))-1)
 
 
 def gfunc2_2(x):
-    """This function defines one of the g(x) functions for finding the fixed point of func2. 
-        Note: This function works for all x in [-10,10].
+    """This function defines a g(x) function that works for iterating through function #2.
+        This can work for any of the roots. 
         
     Inputs:
-        x (flaot): An arbitrary value.
+        x (float): An arbitrary value
         
     Returns:
-        np.arcsin(np.sqrt(1-((np.exp(-(x**2))-1)**2))) (float): One of the functions for g(x)
+        np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))+1)))) (float): One of 6 g(x) functions.
         
     """
-    return np.arcsin(np.sqrt(1-((np.exp(-(x**2))-1)**2)))
+    return np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))+1))))
 
 
 def gfunc2_3(x):
-    """This function defines one of the g(x) functions for finding the fixed point of func2. 
-        Note: This function works for all x in [-10, -5pi/2) U (-3pi/2, -pi/2) U (pi/2, 3pi/2) U (5pi/2, 10].
-                                                          
-    Inputs: 
-        x (float): An Arbitrary value
+    """This function defines a g(x) function that works for iterating through function #2.
+        This can only work for +3.15 and +3pi. 
+        x in [4.6, 3.14] U [3pi, 10]
+        
+    Inputs:
+        x (float): An arbitrary value
         
     Returns:
-        np.sqrt(-np.log(np.cos(x)+1)) (float): One of the functions for g(x)
+        np.sqrt(np.log(1-((np.exp(x**2)*np.cos(x))))) (float): One of 6 g(x) functions.
         
     """
-    return np.sqrt(-np.log(np.cos(x)+1))
+    return np.sqrt(np.log(1-((np.exp(x**2)*np.cos(x)))))
 
 
 def gfunc2_4(x):
-    """This function defines one of the g(x) functions for finding the fixed point of func2. 
-        Warning: This function only works for extremely specific values of x.
-        Interval: x in (-9.5,-8.5) U (-6.8, -5.7) U (-3.6, -2.6) U (-0.9, 0.9) U (2.6, 3.6) U (5.7, 6.8) U (8.5, 9.5)
-                                                          
-    Inputs: 
-        x (float): An Arbitrary value
+    """This function defines a g(x) function that works for iterating through function #2.
+        This can only work for -3.15, -3pi, +3.15, and +3pi
+        x in [-10,-3pi] U [-4.6, -3.14] U [3.14,4.6] U [3pi, 10]
+        
+    Inputs:
+        x (float): An arbitrary value
         
     Returns:
-        (1/2)*np.arcsin(2*np.sin(2*x)*(np.exp(-(x**2))-1)) (float): One of the functions for g(x)
+        (1/x)*np.log(1-(np.exp(x**2)*np.cos(x))) (float): One of 6 g(x) functions.
         
     """
-    return (1/2)*(np.arcsin(2*np.sin(x)*(np.exp(-(x**2))-1)))
+    return (1/x)*np.log(1-(np.exp(x**2)*np.cos(x)))
 
 
 def gfunc2_5(x):
-    """This function defines one of the g(x) functions for finding the fixed point of func2. 
-        Note: This function works for all x in [-10, -0.8) U (0.8, 10].
-                                                          
-    Inputs: 
-        x (float): An Arbitrary value
+    """This function defines a g(x) function that works for iterating through function #2.
+        This can only work for +3.13 and +3pi.
+        x in [1.7,3.14] U [7.8, 3pi]
+        
+    Inputs:
+        x (float): An arbitrary value
         
     Returns:
-        np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))-1)))) (float): One of the functions for g(x)
+        np.sqrt(np.log((1-np.exp(x**2))/np.cos(x))) (float): One of 6 g(x) functions.
         
     """
-    return np.arcsin((np.sin(2*x)/(2*(np.exp(-(x**2))-1))))
+    return np.sqrt(np.log((1-np.exp(x**2))/np.cos(x)))
 
 
 def gfunc2_6(x):
-    """This function defines one of the g(x) functions for finding the fixed point of func2. 
-        Note: This function works for all x in [-10, -3.14) U (-3.14, 0) U (0, 3.14) U (3.14, 10].
+    """This function defines a g(x) function that works for iterating through function #2.
+        This can only work for +/- 3.13 and +/- 3pi.
+        x in [-3pi, -7.9] U [-3.14, -1.8] U [1.8, 3.14] U [7.9, 3pi]
         
-    Inputs: 
-        x (float): An Arbitrary value
-        
-    Returns:
-        -(1/x)*(np.log(np.cos(x)+1)) (float): One of the functions for g(x)
-        
-    """
-    return -(1/x)*(np.log(np.cos(x)+1))
-
-
-def gfunc2_7(x):
-    """This function defines one of the g(x) functions for finding the fixed points of func2.
-        Interval:
-            
     Inputs:
-        x (float): An Arbitrary value
+        x (float): An arbitrary value
         
     Returns:
-        -(1/x)*(np.log(((np.sin(2/x)/(2*np.sin(x)))+1))) (float): One of the functions for g(x)
+        (1/x)*np.log((1-np.exp(x^2))/np.cos(x)) (float): One of 6 g(x) functions.
         
     """
-    return -(1/x)*(np.log(((np.sin(2/x)/(2*np.sin(x)))+1)))
+    return (1/x)*np.log((1-np.exp(x**2))/np.cos(x))
 
 
 def func3(x):
@@ -324,5 +313,43 @@ def newtons_method(func,dfunc, x0, tol=10E-14):
     return list_calcs
     
 
-def bisection_method():
-    return
+def bisection_method(func, a, b, tol1=10E-14, tol2=10E-14):
+    """This function defines the Bisection Method for converging to the root of a function
+    
+    Inputs:
+        func (Function): The function that we are stepping through
+        a (int): First part of interval [a,b]
+        b (int): Second part of interval [a,b]
+        tol1 (float): The first tolerance number, set to 10E-14
+        tol2 (flaot): The second tolerance number to ensure nothing blows up, set to 10E-14
+        
+    Returns: 
+        limit_calcs (list): A list of the c-values and the final iteration value.
+        
+    """
+    limit = 1 + int(np.ceil(np.log((b-a)/tol1)/np.log(2)))
+    
+    c = np.zeros(limit + 1)
+    error = np.zeros(limit + 1)
+    
+    error[1] = 10
+    k = 1
+    
+    c[1] = (a+b) /2
+    fa = func(a)
+    fc = func(c[1])
+    
+    while error[k] > tol1 and k < limit and abs(fc) > tol2:
+        if fa*fc < 0:
+            b = c[k]
+        else:
+            a = c[k]
+            fa = func(a)
+            
+        c[k + 1] = (a+b) / 2
+        fc = func(c[k + 1])
+        error[k + 1] = abs(c[k+1] - c[k])
+        k += 1
+        
+    limit_calcs = [c,k]
+    return limit_calcs
