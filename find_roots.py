@@ -106,22 +106,22 @@ fixed_point_list.append(func1_fp_x1)
 #The only ones that may work are: 1,2,4,5,6,7
 #Delete 3 and 8
 
-func2_fpm_1 = fn.fixed_point_func(fn.gfunc2_1, 3, 100)
+func2_fpm_1 = fn.fixed_point_func(fn.gfunc2_1, 3.1, 10000) #This one loves 3.13
 fn.plot_fixed_point(func2_fpm_1[0], func2_fpm_1[1], 1)
 
-func2_fpm_2 = fn.fixed_point_func(fn.gfunc2_2, -3, 100) #Use Cubic Convergence method
+func2_fpm_2 = fn.fixed_point_func(fn.gfunc2_2, -2.5, 10000) #Use Cubic Convergence method!
 fn.plot_fixed_point(func2_fpm_2[0], func2_fpm_2[1], 2)
 
-func2_fpm_3 = fn.fixed_point_func(fn.gfunc2_3, 3.15, 100) #Use Cubic Convergence method
+func2_fpm_3 = fn.fixed_point_func(fn.gfunc2_3, 3.2, 10000) #Use Cubic Convergence method (somewhat accurate)
 fn.plot_fixed_point(func2_fpm_3[0], func2_fpm_3[1], 3)
 
-func2_fpm_4 = fn.fixed_point_func(fn.gfunc2_4, -3.2, 100) #Use Cubic Convergence method
+func2_fpm_4 = fn.fixed_point_func(fn.gfunc2_4, -3.17, 10000) #Works for -3.15 (So close...)
 fn.plot_fixed_point(func2_fpm_4[0], func2_fpm_4[1], 4)
 
-func2_fpm_5 = fn.fixed_point_func(fn.gfunc2_5, 9.42, 10000) #Converges very slowly
+func2_fpm_5 = fn.fixed_point_func(fn.gfunc2_5, 9.41, 1000000) #Converges very very slowly
 fn.plot_fixed_point(func2_fpm_5[0], func2_fpm_5[1], 5)
 
-func2_fpm_6 = fn.fixed_point_func(fn.gfunc2_6, -9.42, 10000) #Converges very slowly
+func2_fpm_6 = fn.fixed_point_func(fn.gfunc2_6, -3.12, 100000) #Converges very very slowly
 fn.plot_fixed_point(func2_fpm_6[0], func2_fpm_6[1], 6)
 
 

@@ -116,7 +116,7 @@ def gfunc2_3(x):
         np.sqrt(np.log(1-((np.exp(x**2)*np.cos(x))))) (float): One of 6 g(x) functions.
         
     """
-    return np.sqrt(np.log(1-((np.exp(x**2)*np.cos(x)))))
+    return np.sqrt(np.log(1-(np.exp(x**2)*np.cos(x))))
 
 
 def gfunc2_4(x):
